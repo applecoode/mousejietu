@@ -1,0 +1,160 @@
+# IPython log file
+
+import PyHook3
+import pythoncom
+import win32api
+
+def abortkey(event):
+    if(event.Key)=='F12':
+        win32api.PostQuitMessage()
+    return True
+    
+def testmouse(event):
+    print(event.Position)
+    return True
+    
+def main():  
+  # 创建一个“钩子”管理对象  
+  hm = PyHook3.HookManager()  
+  # 监听所有键盘事件  
+  hm.KeyDown = abortkey  
+  # 设置键盘“钩子”  
+  hm.HookKeyboard()  
+  # 监听所有鼠标事件  
+  hm.MouseLeftDown = testmouse  
+  # 设置鼠标“钩子”  
+  hm.HookMouse()  
+  # 进入循环，如不手动关闭，程序将一直处于监听状态  
+  pythoncom.PumpMessages() 
+  
+main()
+main
+main()
+get_ipython().magic('list')
+get_ipython().magic('magiclist')
+get_ipython().magic('pinfo PyHook3')
+get_ipython().magic('pinfo2 PyHook3')
+get_ipython().magic('pinfo2 PyHook3.HookManager')
+get_ipython().magic('magic')
+get_ipython().magic('logstart d:/myproject/pyhook/tmp_code.py')
+from colorama import Fore
+print(Fore.red+'aaaa'+Fore.reset)
+print(Fore.RED+'aaaa'+Fore.RESET)
+import PyHook3
+import pythoncom
+import win32api
+from colorama import Fore
+
+def abortkey(event):
+    if(event.Key)=='F12':
+        win32api.PostQuitMessage()
+    return True
+
+def mouseup(event):
+    global start_x,start_y
+    start_x,start_y=event.Position
+    print(Fore.GREEN+event.Position+Fore.RESET)
+    return True
+
+def mousedown(event):
+    global end_x,end_y
+    enx_x,end_y=event.Position
+    print(Fore.RED+event.Position+Fore.RESET)
+    return True
+
+def main():  
+  # 创建一个“钩子”管理对象  
+  hm = PyHook3.HookManager()  
+  # 监听所有键盘事件  
+  hm.KeyDown = abortkey  
+  # 设置键盘“钩子”  
+  hm.HookKeyboard()  
+  # 监听所有鼠标事件  
+  hm.MouseLeftDown = mouseup
+  hm.MouseLeftUp = mousedown
+  # 设置鼠标“钩子”  
+  hm.HookMouse()  
+  # 进入循环，如不手动关闭，程序将一直处于监听状态  
+  pythoncom.PumpMessages() 
+  
+main()
+get_ipython().magic('post')
+get_ipython().magic('past')
+get_ipython().magic('paste')
+import PyHook3
+import pythoncom
+import win32api
+from colorama import Fore
+
+def abortkey(event):
+	if(event.Key)=='F12':
+		win32api.PostQuitMessage()
+	return True
+
+def mouseup(event):
+	global start_x,start_y
+	start_x,start_y=event.Position
+	print(Fore.GREEN+'{1}'.format(event.Position)+Fore.RESET)
+	return True
+
+def mousedown(event):
+	global end_x,end_y
+	enx_x,end_y=event.Position
+	print(Fore.RED+'{1}'.format(event.Position)+Fore.RESET)
+	return True
+
+def main():  
+  # 创建一个“钩子”管理对象  
+  hm = PyHook3.HookManager()  
+  # 监听所有键盘事件  
+  hm.KeyDown = abortkey  
+  # 设置键盘“钩子”  
+  hm.HookKeyboard()  
+  # 监听所有鼠标事件  
+  hm.MouseLeftDown = mouseup
+  hm.MouseLeftUp = mousedown
+  # 设置鼠标“钩子”  
+  hm.HookMouse()  
+  # 进入循环，如不手动关闭，程序将一直处于监听状态  
+  pythoncom.PumpMessages() 
+main()
+get_ipython().magic('paste')
+import PyHook3
+import pythoncom
+import win32api
+from colorama import Fore
+
+def abortkey(event):
+	if(event.Key)=='F12':
+		win32api.PostQuitMessage()
+	return True
+
+def mouseup(event):
+	global start_x,start_y
+	start_x,start_y=event.Position
+	print(Fore.GREEN+'{1}'.format(event.Position)+Fore.RESET)
+	return True
+
+def mousedown(event):
+	global end_x,end_y
+	enx_x,end_y=event.Position
+	print(Fore.RED+'{1}'.format(event.Position)+Fore.RESET)
+	return True
+
+def main():  
+  # 创建一个“钩子”管理对象  
+  hm = PyHook3.HookManager()  
+  # 监听所有键盘事件  
+  hm.KeyDown = abortkey  
+  # 设置键盘“钩子”  
+  hm.HookKeyboard()  
+  # 监听所有鼠标事件  
+  hm.MouseLeftDown = mouseup
+  hm.MouseLeftUp = mousedown
+  # 设置鼠标“钩子”  
+  hm.HookMouse()  
+  # 进入循环，如不手动关闭，程序将一直处于监听状态  
+  pythoncom.PumpMessages() 
+get_ipython().magic('pinfo mouseup')
+get_ipython().magic('pinfo2 mouseup')
+main()
