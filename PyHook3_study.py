@@ -1,5 +1,7 @@
 import pythoncom  
-import pyHook  
+import PyHook3
+import win32api
+
 def onMouseEvent(event):  
   
     # 监听鼠标事件  
@@ -18,32 +20,31 @@ def onMouseEvent(event):
     return True  
   
 def onKeyboardEvent(event):  
- # 监听键盘事件  
-  print("MessageName:", event.MessageName  )
-  print("Message:", event.Message  )
-  print("Time:", event.Time  )
-  print("Window:", event.Window  )
-  print("WindowName:", event.WindowName  )
-  print("Ascii:", event.Ascii, chr(event.Ascii)  )
-  print("Key:", event.Key  )
-  print("KeyID:", event.KeyID  )
-  print("ScanCode:", event.ScanCode  )
-  print("Extended:", event.Extended  )
-  print("Injected:", event.Injected  )
-  print("Alt", event.Alt  )
-  print("Transition", event.Transition  )
-  print("---"  )
-  def abortkey(event):
-	if(event.Key)=='F12':
-		win32api.PostQuitMessage()
+    # 监听键盘事件  
+    print("MessageName:", event.MessageName  )
+    print("Message:", event.Message  )
+    print("Time:", event.Time  )
+    print("Window:", event.Window  )
+    print("WindowName:", event.WindowName  )
+    print("Ascii:", event.Ascii, chr(event.Ascii)  )
+    print("Key:", event.Key  )
+    print("KeyID:", event.KeyID  )
+    print("ScanCode:", event.ScanCode  )
+    print("Extended:", event.Extended  )
+    print("Injected:", event.Injected  )
+    print("Alt", event.Alt  )
+    print("Transition", event.Transition  )
+    print("---"  )
+    if event.Key=='F12':
+        win32api.PostQuitMessage()
   # 同鼠标事件监听函数的返回值  
-  return True  
+    return True  
   
 def main():  
   # 创建一个“钩子”管理对象  
   hm = PyHook3.HookManager()  
   # 监听所有键盘事件  
-  hm.KeyDown = onKeyboardEvent  
+  hm.KeyAll = onKeyboardEvent  
   # 设置键盘“钩子”  
   hm.HookKeyboard()  
   # 监听所有鼠标事件  
